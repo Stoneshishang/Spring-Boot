@@ -2,7 +2,7 @@ package com.example.demo;
 
 import org.springframework.stereotype.Component;
 
-@Component("lap1")
+@Component("lap1")  //instantiate a new object.
 public class Laptop
 {
 	private int lid;
@@ -19,6 +19,7 @@ public class Laptop
 	public void setBrand(String brand) {
 		this.brand = brand;
 	}
+
 	@Override
 	public String toString() {
 		return "Laptop [lid=" + lid + ", brand=" + brand + "]";

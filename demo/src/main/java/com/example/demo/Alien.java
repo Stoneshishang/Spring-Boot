@@ -6,19 +6,22 @@ import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
 @Component
+//@Scope(value = "prototype")		//the Spring contianer will not create an instance by default. it only creates object when .getBean() is used.
 public class Alien {
 
 	private int aid;
 	private String aname;
 	private String tech;
+
 	@Autowired
-	@Qualifier("lap1")
+	@Qualifier("lap1") //search the Laptop dependency by name
 	private Laptop laptop;
 	
 	public Alien() {
 		super();
 		System.out.println("object created..");
 	}
+
 	public int getAid() {
 		return aid;
 	}
@@ -43,7 +46,8 @@ public class Alien {
 	public void setLaptop(Laptop laptop) {
 		this.laptop = laptop;
 	}
-	public void show() 
+
+	public void show()
 	{
 		System.out.println("in show");
 		laptop.compile();
